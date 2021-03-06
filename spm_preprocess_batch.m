@@ -298,7 +298,7 @@ for subject = job_info.subjects
             
             fprintf(fid,[datestr(now,'HH:MM:SS'),' Starting ART Detection\n'])
             job_info = create_cfg_file(job_info);
-            art(job_info.job_info.cfg_path)
+            art(job_info.cfg_path)
             fprintf(fid,[datestr(now,'HH:MM:SS'),' ART Detection Ended\n'])
         end
         
