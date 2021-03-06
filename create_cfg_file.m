@@ -1,9 +1,10 @@
-function cfg_file = create_cfg_file(job_info)
+function job_info = create_cfg_file(job_info)
 
 job_info.fprefix = 'rs';
 job_info =  data_grabber(job_info);
 
 filename = [job_info.path_to_data sprintf('%s-art-cfg-file.cfg',date)];
+
 cfg_file = fopen(filename,'wt');
 fprintf(cfg_file,'sessions: 1\n');                         %number of sessions
 fprintf(cfg_file,'global_mean: 1\n');                      %global mean type (1: Standard 2: User-defined mask)
@@ -26,4 +27,7 @@ end
 
 fprintf(cfg_file,['session 1 motion ',job_info.reallign_params{1},'\n']);
 fprintf(cfg_file,'end\n');
+fclose(cfg_file)
+
+job_info.cfg_path = filename;
 end

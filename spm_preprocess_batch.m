@@ -293,7 +293,16 @@ for subject = job_info.subjects
             job_info.fprefix = ['s' job_info.fprefix];
             job_info =  data_grabber(job_info);
         end
-     fprintf(fid,'\n\n');
+        
+        if contains("sm",job_info.jobs)
+            
+            fprintf(fid,[datestr(now,'HH:MM:SS'),' Starting ART Detection\n'])
+            job_info = create_cfg_file(job_info);
+            art(job_info.job_info.cfg_path)
+            fprintf(fid,[datestr(now,'HH:MM:SS'),' ART Detection Ended\n'])
+        end
+        
+        fprintf(fid,'\n\n');
     end
 end
 end
