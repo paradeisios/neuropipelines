@@ -16,11 +16,11 @@ function spm_preprocess_batch(job_info)
 % job_info.spm_folder = '/path/to/spm/folder/';
 % job_info.subjects = [1,2,...,n];
 % job_info.sessions = [1,2,...,n];
-% job_info.jobs = ["re","co","se","nm","sm"];
+% job_info.jobs = ["re","co","se","nm","sm","ar"];
 % job_info.temporal.nslices = x;
 % job_info.temporal.TR = x;
 % job_info.temporal.slice_order = x;
-% job_info.temporal.refslice=x;
+% job_info.temporal.refslice = x;
 % job_info.prefix = 2 first letter of your mr images
 
 % Available jobs
@@ -297,3 +297,5 @@ for subject = job_info.subjects
     end
 end
 end
+
+
