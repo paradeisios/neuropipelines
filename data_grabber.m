@@ -25,7 +25,9 @@ function job_info =  data_grabber(job_info)
     deformation_fields = cellstr([anat_directory deformation_field_names.name]);
     
     job_info.anat_files = anat_files;
+    job_info.anat_dir = anat_directory;
     job_info.func_files = func_files;
+    job_info.func_dir = func_directory;
     job_info.mean_image = mean_image;
     job_info.reallign_params = reallign_params;
     job_info.deformation_fields = deformation_fields;

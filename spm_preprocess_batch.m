@@ -294,12 +294,14 @@ for subject = job_info.subjects
             job_info =  data_grabber(job_info);
         end
         
-        if contains("sm",job_info.jobs)
+        if contains("ar",job_info.jobs)
             
-            fprintf(fid,[datestr(now,'HH:MM:SS'),' Starting ART Detection\n'])
+            fprintf(fid,[datestr(now,'HH:MM:SS'),' Starting ART Detection\n']);
             job_info = create_cfg_file(job_info);
-            art(job_info.cfg_path)
-            fprintf(fid,[datestr(now,'HH:MM:SS'),' ART Detection Ended\n'])
+            art(job_info.cfg_file)
+            fprintf(fid,[datestr(now,'HH:MM:SS'),' ART Detection Ended\n']);
+            create_art_outliers(job_info)
+
         end
         
         fprintf(fid,'\n\n');
